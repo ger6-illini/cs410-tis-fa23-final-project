@@ -2,7 +2,7 @@
 
 ## 1. What are the names and NetIDs of all your team members? Who is the captain?
 
-Gilberto Ramirez, NetID: \texttt{ger6} -- Captain and the only team member!
+Gilberto Ramirez, NetID: `ger6` -- Captain and the only team member!
 
 ## 2. What topic have you chosen? Why is it a problem? How does it relate to the theme and to the class?
 
@@ -22,7 +22,7 @@ Since this project plans to implement BM25 to solve an information retrieval pro
 
 The main dataset (corpus) is all the IETF RFCs hosted in the [RFC Editor](https://www.rfc-editor.org/) web site. Despite having around 10,000 documents in this corpus, they are all in ASCII format and do not change too frequently. I am planning to keep all the RFCs in local storage in order to create an inverted index that might need to be refreshed once a week. I will use this inverted index to run the BM25 ranking function given its flexibility.
 
-If time allows it, I might add functionality to discover topics for an RFC chosen by the user, i.e., a user with a browser tab opened with a specific RFC document in the [RFC Editor](https://www.rfc-editor.org/) web site can click on the extension icon to list topics that RFC touches and discovered in an unsupervised way, so the researcher can fetch a quick summary of the main areas the RFC covers before embarking in the long journey of detailed reading and analysis that can take many hours. In that case, planning to use Latent Dirichlet Allocation as the algorithm of choice.
+If time allows it, I might add functionality to discover topics for an RFC chosen by the user, i.e., a user with a browser tab opened with a specific RFC document in the [RFC Editor](https://www.rfc-editor.org/) web site can click on the extension icon to list topics that RFC touches and discovered in an unsupervised way, so the researcher can fetch a quick summary of the main areas the RFC covers before embarking in the long journey of detailed reading and analysis that can take many hours. For topic analysis, I am planning to use Latent Dirichlet Allocation as the algorithm of choice.
 
 ## 4. How will you demonstrate that your approach will work as expected
 
@@ -30,16 +30,15 @@ There are no formal Cranfield datasets for this problem and there are no applica
 
 ## 5. Which programming language do you plan to use?
 
-I am planning to build an extension only for [Chrome](https://www.google.com/chrome/) since that is the web browser used by most of my fellow researchers in the area. As a result, I will use JavaScript, HTML, and CSS for the front-end. For the back-end including scraping the corpus, creating the inverted index, and implementing BM25, I am planning to use Python, MetaPy/MeTA, and Flask.
+I am planning to build an extension only for [Chrome](https://www.google.com/chrome/) since that is the web browser used by most of my fellow researchers in the area. As a result, I will use JavaScript, HTML, and CSS for the front-end. For the back-end which includes crawling and scraping the corpus, creating the inverted index, and implementing BM25, I am planning to use Python, [MetaPy/MeTA](https://github.com/meta-toolkit/metapy), and [Flask](https://flask.palletsprojects.com/en/3.0.x/).
 
-6. Justify that the workload of your topic is at least 20 hours. List tasks to be completed and estimated time for each task.
+## 6. Justify that the workload of your topic is at least 20 hours. List tasks to be completed and estimated time for each task.
 
-A rough estimate of the project tasks and time needed to complete each task:
-  * (4 hours) Fetch and filter corpus files. This might be making use of the \texttt{rsync} service hosted by [RFC Editor](https://www.rfc-editor.org/). Create an inverted index using Python and MetaPy/MeTA.
+A rough estimate of the project tasks and time I estimated I needed to complete each task:
+  * (4 hours) Fetch and filter corpus files. This might be making use of the `rsync` service hosted by [RFC Editor](https://www.rfc-editor.org/). Create an inverted index using Python and MetaPy/MeTA.
   * (10 hours) Learn about developing Chrome extensions and code the front-end using JavaScript, HTML, and CSS.
   * (12 hours) Code the back-end in Python to be able to receive a REST based JSON request with the query keywords provided by the user and collected by the front-end, apply a ranking function (BM25) using the previously built inverted index, and return the list of documents (RFCs) in descending order of relevance.
   * (2 hours) Testing the solution to adjust ranking function or inverted index creation.
   * (4 hours) Documentation.
   * (5 hours) Project report.
   * (3 hours) Project presentation.
-\end{itemize}
